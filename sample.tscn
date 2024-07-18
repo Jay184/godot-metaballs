@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://b1x1as7rcuyko"]
+
+[ext_resource type="PackedScene" uid="uid://cvsqe7v1pisv5" path="res://components/metaball/metaball.tscn" id="1_04efb"]
+[ext_resource type="PackedScene" uid="uid://b6tg1pt0edk7a" path="res://components/ball/ball.tscn" id="2_5wmwa"]
+
+[node name="Sample" type="Node2D"]
+
+[node name="Metaball" parent="." instance=ExtResource("1_04efb")]
+
+[node name="Ball1" parent="Metaball" instance=ExtResource("2_5wmwa")]
+position = Vector2(114, 102)
+radius = 25.242
+color = Color(0.278, 0.698, 0.145, 1)
+
+[node name="Ball2" parent="Metaball" instance=ExtResource("2_5wmwa")]
+position = Vector2(172, 119)
+radius = 35.998
+color = Color(0.592, 0.141, 0.533, 1)

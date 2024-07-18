@@ -1,8 +1,4 @@
-[gd_resource type="Shader" format=2]
-
-[resource]
-code = "shader_type canvas_item;
-
+shader_type canvas_item;
 
 struct Ball {
 	vec2 position;
@@ -41,8 +37,6 @@ Ball get_ball(in int index) {
 
 
 void fragment() {
-	float x = FRAGCOORD.x;
-	float y = FRAGCOORD.y;
 	float v = 0.0;
 	vec4 color = vec4(v);
 	
@@ -69,4 +63,3 @@ void fragment() {
 	
 	COLOR = color;
 }
-"
