@@ -1,11 +1,11 @@
 [gd_scene load_steps=4 format=3 uid="uid://cvsqe7v1pisv5"]
 
-[ext_resource type="Shader" path="res://components/metaball/metaball.gdshader" id="1_3a4bk"]
-[ext_resource type="Script" path="res://components/metaball/metaball.gd" id="1_msg2t"]
+[ext_resource type="Shader" uid="uid://bpgjwcjh3bx2o" path="res://components/metaball/metaball.gdshader" id="1_3a4bk"]
+[ext_resource type="Script" uid="uid://bx2sqr56lilst" path="res://components/metaball/metaball.gd" id="1_msg2t"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_i5206"]
 shader = ExtResource("1_3a4bk")
-shader_parameter/resolution = null
+shader_parameter/resolution = Vector2(0, 0)
 shader_parameter/count = 2
 shader_parameter/sharpness = 0.98
 shader_parameter/threshold = 0.0

@@ -10,10 +10,12 @@ config_version=5
 
 [application]
 
-config/name="godot-metaballs"
+config/name="Metaballs"
+config/tags=PackedStringArray("2d", "complete", "sample")
 run/main_scene="res://sample.tscn"
-config/features=PackedStringArray("4.2", "Mobile")
-config/icon="res://icon.svg"
+config/features=PackedStringArray("4.4", "Mobile")
+boot_splash/bg_color=Color(0.232003, 0.269085, 0.216919, 1)
+config/icon="uid://dd6yiqpno4xgt"
 
 [rendering]
 

@@ -6,13 +6,16 @@
 [node name="Sample" type="Node2D"]
 
 [node name="Metaball" parent="." instance=ExtResource("1_04efb")]
-
-[node name="Ball1" parent="Metaball" instance=ExtResource("2_5wmwa")]
-position = Vector2(114, 102)
-radius = 25.242
-color = Color(0.278, 0.698, 0.145, 1)
+offset_left = 2.0
+offset_right = 357.0
+offset_bottom = 227.0
 
 [node name="Ball2" parent="Metaball" instance=ExtResource("2_5wmwa")]
 position = Vector2(172, 119)
 radius = 35.998
 color = Color(0.592, 0.141, 0.533, 1)
+
+[node name="Ball1" parent="Metaball" instance=ExtResource("2_5wmwa")]
+position = Vector2(114, 102)
+radius = 25.242
+color = Color(0.278, 0.698, 0.145, 1)

@@ -28,9 +28,9 @@ Ball get_ball(in int index) {
 	vec4 color = texture(balls, vec2(normalized_index, 0.0));
 	vec3 shape = texture(balls, vec2(normalized_index, 1.0)).xyz;
 	
-	shape.x = map(shape.x, 0.0, 1.0, 0.0, resolution.x);
-	shape.y = map(shape.y, 0.0, 1.0, resolution.y, 0.0);
-	shape.z = map(shape.z, 0.0, 1.0, 0.0, resolution.x);
+	shape.x *= resolution.x; // map(shape.x, 0.0, 1.0, 0.0, resolution.x);
+	shape.y *= resolution.y;
+	shape.z *= resolution.x;
 	
 	return Ball(shape.xy, shape.z, color);
 }
@@ -39,6 +39,7 @@ Ball get_ball(in int index) {
 void fragment() {
 	float v = 0.0;
 	vec4 color = vec4(v);
+	COLOR = color;
 	
 	for (int i = 0; i < count; i++) {
 		Ball ball = get_ball(i);
@@ -47,12 +48,16 @@ void fragment() {
 		float r = ball.radius;
 		float dx = delta.x;
 		float dy = delta.y;
-
+		
 		float f = r*r / (dx*dx + dy*dy + 1e-20);
 		f = smoothstep(min(threshold, 1.0), 1.0, f);
 		
 		v += f;
 		color.xyz += ball.color.xyz * f;
+		
+		if (length(delta) < r) {
+			COLOR.a = 1.0;
+		}
 	}
 
 	float t = smoothstep(min(sharpness, 1.0), 1.0, v);
